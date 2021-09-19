@@ -3,6 +3,7 @@ import {Banner} from '../Banner/Banner';
 import {VideoSection} from '../VideoSection/VideoSection';
 import {Schedule} from '../Schedule/Schedule';
 import {Feedback} from '../../Feedback/Feedback';
+import {AboutUs} from '../AboutUs/AboutUs';
 
 export const LandingComponent = () => {
   return (
@@ -11,6 +12,7 @@ export const LandingComponent = () => {
       <VideoSection/>
       <Schedule/>
       <Feedback/>
+      <AboutUs/>
     </React.Fragment>
   );
 };
