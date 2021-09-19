@@ -24,21 +24,23 @@ const useStyles = makeStyles(theme => ({
     height: 170
   },
   logo: {
-    marginTop: 20,
+    width: 150,
+    height: 150,
     marginLeft: 20,
 
     [theme.breakpoints.down('xs')]: {
       marginTop: 15,
       marginLeft: 0,
-      height: 50
+      height: 50,
+      width: 100
     }
   },
   nav: {
     fontFamily: 'Nunita',
-    marginTop: 35
+    marginTop: 45
   },
   search: {
-    marginTop: 35,
+    marginTop: 45,
     fontSize: 35,
     color: 'gray',
     cursor: 'pointer',
