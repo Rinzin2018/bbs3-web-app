@@ -4,7 +4,10 @@ import {makeStyles} from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
   section: {
-    marginTop: 100
+    marginTop: 200,
+    [theme.breakpoints.down('xs')]:{
+      marginTop: 100
+    }
   },
   title: {
     fontSize: 22,

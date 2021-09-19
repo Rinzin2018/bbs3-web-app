@@ -11,8 +11,8 @@ export const LandingComponent = () => {
       <Banner/>
       <VideoSection/>
       <Schedule/>
-      <Feedback/>
       <AboutUs/>
+      <Feedback/>
     </React.Fragment>
   );
 };

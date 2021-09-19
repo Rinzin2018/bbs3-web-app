@@ -138,7 +138,7 @@ export const Appbar = (props) => {
           <Toolbar>
             <Grid container>
               <Grid item lg={7} md={7} sm={7} xs={7}>
-                <img src={require('../../images/logo.png').default} className={classes.logo} alt=""/>
+                <img src={require('../../images/bbs3-logo.png').default} className={classes.logo} alt=""/>
               </Grid>
               <Hidden xsDown={true}>
                 <Grid item lg={1} md={1} sm={1} xs={1}>

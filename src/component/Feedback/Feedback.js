@@ -7,7 +7,10 @@ import PhoneIcon from '@material-ui/icons/Phone';
 
 const useStyles = makeStyles(theme => ({
   section: {
-    marginTop: 100
+    marginTop: 200,
+    [theme.breakpoints.down('xs')]:{
+      marginTop: 100
+    }
   },
   paper: {
     position: 'absolute',
