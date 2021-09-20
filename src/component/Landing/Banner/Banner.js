@@ -97,7 +97,7 @@ export const Banner = () => {
   const classes = useStyles();
 
   return (
-    <React.Fragment>
+    <React.Fragment id="banner">
       <Hidden smUp={true}>
         <img src={require('../../../images/banner-child.jpg').default} className={classes.mobileBanner} alt=""/>
       </Hidden>

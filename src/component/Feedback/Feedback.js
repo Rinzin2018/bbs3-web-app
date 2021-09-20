@@ -60,7 +60,7 @@ export const Feedback = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.section}>
+    <div className={classes.section} id="feedback">
       <Container>
         <Grid container>
           <Grid item lg={12} xs={12} align="right">

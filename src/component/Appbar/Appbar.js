@@ -16,6 +16,7 @@ import ScheduleIcon from '@material-ui/icons/Schedule';
 import InfoIcon from '@material-ui/icons/Info';
 import FeedbackIcon from '@material-ui/icons/Feedback';
 import Search from '../../shared/Search';
+import {Link} from 'react-scroll';
 
 const useStyles = makeStyles(theme => ({
   appbar: {
@@ -27,6 +28,7 @@ const useStyles = makeStyles(theme => ({
     width: 150,
     height: 150,
     marginLeft: 20,
+    cursor: 'pointer',
 
     [theme.breakpoints.down('xs')]: {
       marginTop: 15,
@@ -36,8 +38,14 @@ const useStyles = makeStyles(theme => ({
     }
   },
   nav: {
-    fontFamily: 'Nunita',
-    marginTop: 45
+    marginTop: 45,
+    fontWeight: 500,
+    cursor: 'pointer',
+
+    '&:hover': {
+      color: theme.primary,
+      transition: '.6s',
+    },
   },
   search: {
     marginTop: 45,
@@ -138,20 +146,30 @@ export const Appbar = (props) => {
           <Toolbar>
             <Grid container>
               <Grid item lg={7} md={7} sm={7} xs={7}>
-                <img src={require('../../images/bbs3-logo.png').default} className={classes.logo} alt=""/>
+                <a href="/">
+                  <img src={require('../../images/bbs3-logo.png').default} className={classes.logo} alt=""/>
+                </a>
               </Grid>
               <Hidden xsDown={true}>
                 <Grid item lg={1} md={1} sm={1} xs={1}>
-                  <Typography variant="h6" className={classes.nav}>Home</Typography>
+                  <Link to="banner" spy={true} smooth={true}>
+                    <Typography variant="h6" className={classes.nav}>Home</Typography>
+                  </Link>
                 </Grid>
                 <Grid item lg={1} md={1} sm={1} xs={1}>
-                  <Typography variant="h6" className={classes.nav}>Schedule</Typography>
+                  <Link to="schedule" spy={true} smooth={true}>
+                    <Typography variant="h6" className={classes.nav}>Schedule</Typography>
+                  </Link>
                 </Grid>
                 <Grid item lg={1} md={1} sm={1} xs={1}>
-                  <Typography variant="h6" className={classes.nav}>About Us</Typography>
+                  <Link to="about" spy={true} smooth={true}>
+                    <Typography variant="h6" className={classes.nav}>About Us</Typography>
+                  </Link>
                 </Grid>
                 <Grid item lg={1} md={1} sm={1} xs={1}>
-                  <Typography variant="h6" className={classes.nav}>Feedback</Typography>
+                  <Link to="feedback" spy={true} smooth={true}>
+                    <Typography variant="h6" className={classes.nav}>Feedback</Typography>
+                  </Link>
                 </Grid>
               </Hidden>
               <Grid item lg={1} md={1} sm={3} xs={3} align="center">

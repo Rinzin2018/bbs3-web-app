@@ -66,7 +66,7 @@ export const Schedule = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.section}>
+    <div className={classes.section} id="schedule">
       <Container>
         <Grid container>
           <Grid item lg={5} md={5} xs={7}>

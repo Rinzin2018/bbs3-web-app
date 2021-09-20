@@ -47,7 +47,7 @@ export const AboutUs = () => {
   const classes = useStyles();
   return (
     <div>
-      <Container className={classes.section}>
+      <Container className={classes.section} id="about">
         <Hidden smDown={true}>
           <Grid container>
             <Grid item lg={7} md={7} xs={12} align="center">
