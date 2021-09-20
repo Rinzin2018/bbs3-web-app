@@ -4,6 +4,7 @@ import {VideoSection} from '../VideoSection/VideoSection';
 import {Schedule} from '../Schedule/Schedule';
 import {Feedback} from '../../Feedback/Feedback';
 import {AboutUs} from '../AboutUs/AboutUs';
+import {Footer} from '../Footer/Footer';
 
 export const LandingComponent = () => {
   return (
@@ -13,6 +14,7 @@ export const LandingComponent = () => {
       <Schedule/>
       <AboutUs/>
       <Feedback/>
+      <Footer/>
     </React.Fragment>
   );
 };
