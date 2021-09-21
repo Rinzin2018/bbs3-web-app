@@ -8,6 +8,7 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import EmailIcon from '@material-ui/icons/Email';
 import CallIcon from '@material-ui/icons/Call';
+import GoogleMapsContainer from './Map';
 
 
 const useStyles = makeStyles(theme => ({
@@ -106,14 +107,14 @@ export const Footer = () => {
           </div>
           <div>
             <Typography variant={'h6'} className={classes.head}> About us </Typography>
-            <Typography className={classes.content} align={'left'}> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad beatae delectus distinctio eum velquis quod suscipit vel veniam vero vitae voluptatem
-               <a href="#" className={classes.link}> Read More.. </a>  </Typography>
+            <Typography className={classes.content} align={'left'}> Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit. Ad beatae delectus distinctio eum velquis quod suscipit vel veniam vero vitae voluptatem
+              <a href="#" className={classes.link}> Read More.. </a> </Typography>
           </div>
         </Grid>
-
         <Grid item lg={3} md={3}>
           <div>
-            <Typography variant={'h6'} className={classes.follow} > Follow us </Typography>
+            <Typography variant={'h6'} className={classes.follow}> Follow us </Typography>
           </div>
           <div className={classes.icon}>
             <FacebookIcon className={classes.facebookIcon}/>
@@ -121,7 +122,6 @@ export const Footer = () => {
             <LinkedInIcon className={classes.linkedInIcon}/>
           </div>
         </Grid>
-
         <Grid item lg={3} md={3}>
           <div>
             <Typography variant={'h6'} className={classes.contact}> Contact us </Typography>
@@ -138,11 +138,8 @@ export const Footer = () => {
             </div>
           </div>
         </Grid>
-
-        <Grid item lg={3} md={3}>
-          <div >
-           Google Map
-          </div>
+        <Grid item lg={3} md={3} align="center">
+          <GoogleMapsContainer/>
         </Grid>
       </Grid>
     </div>
