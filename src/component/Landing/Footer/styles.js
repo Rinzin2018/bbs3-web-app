@@ -36,13 +36,13 @@ export const useStyles = makeStyles(theme => ({
     color: '#fff',
     fontWeight: 700,
     marginTop: 80,
-    marginLeft: 150,
+    marginLeft: 100,
   },
 
   icon: {
     display: 'flex',
     marginTop: 30,
-    marginLeft: 145
+    marginLeft: 100
   },
 
   facebookIcon: {
@@ -79,14 +79,14 @@ export const useStyles = makeStyles(theme => ({
     color: '#fff',
     fontWeight: 700,
     marginTop: 80,
-    marginLeft: 150,
+    marginLeft: 100,
   },
 
   // Mobile View
 
   section1: {
     backgroundColor: '#FEA000',
-    padding: '5px 0 150px 0',
+    padding: '5px 0 180px 0',
     marginTop: 30,
     width: '100%',
   },
@@ -154,7 +154,7 @@ export const useStyles = makeStyles(theme => ({
     width: 35,
     borderRadius: 40,
     padding: '3px 3px 3px 3px',
-    color: '#4267B2',
+    color: '#cd486b',
   },
 
   linkedInIconMobile: {

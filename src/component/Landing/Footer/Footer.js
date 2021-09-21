@@ -44,13 +44,13 @@ export const Footer = () => {
               </div>
               <div style={{color: '#fff'}}>
                 <div className={classes.icon}>
-                  <LocationOnIcon/> <Typography style={{marginLeft: 20,}}> Chubachu, Thimphu </Typography>
+                  <LocationOnIcon/> <Typography style={{marginLeft: 20,}}> BBS Channel 3, Doeboom Lam, Thimphu, Bhutan. </Typography>
                 </div>
                 <div className={classes.icon}>
-                  <EmailIcon/> <Typography style={{marginLeft: 20}}> bbs3@gmail.com </Typography>
+                  <EmailIcon/> <Typography style={{marginLeft: 20}}> info@bbs3.bt </Typography>
                 </div>
                 <div className={classes.icon}>
-                  <CallIcon/> <Typography style={{marginLeft: 20}}> 12456789 </Typography>
+                  <CallIcon/> <Typography style={{marginLeft: 20}}> +9752335264 </Typography>
                 </div>
               </div>
             </Grid>
@@ -89,13 +89,13 @@ export const Footer = () => {
               </div>
               <div style={{color: '#fff'}}>
                 <div className={classes.iconMobile}>
-                  <LocationOnIcon/> <Typography style={{fontSize: 14}}> Chubachu, Thimphu </Typography>
+                  <LocationOnIcon/> <Typography style={{fontSize: 14}}> BBS Channel 3, Doeboom Lam, Thimphu, Bhutan. </Typography>
                 </div>
                 <div className={classes.iconMobile}>
-                  <EmailIcon/> <Typography style={{fontSize: 14}}> bbs3@gmail.com </Typography>
+                  <EmailIcon/> <Typography style={{fontSize: 14}}> info@bbs3.bt </Typography>
                 </div>
                 <div className={classes.iconMobile}>
-                  <CallIcon/> <Typography style={{fontSize: 14}}> 12456789 </Typography>
+                  <CallIcon/> <Typography style={{fontSize: 14}}> +9752335264 </Typography>
                 </div>
               </div>
               <div>

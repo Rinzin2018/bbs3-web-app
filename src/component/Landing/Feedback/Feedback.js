@@ -1,14 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Button, Card, Container, Grid, Hidden, Paper, TextareaAutosize, TextField, Typography} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import PinDropIcon from '@material-ui/icons/PinDrop';
 import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
 import PhoneIcon from '@material-ui/icons/Phone';
+import * as emailjs from 'emailjs-com';
 
 const useStyles = makeStyles(theme => ({
   section: {
     marginTop: 200,
-    [theme.breakpoints.down('xs')]:{
+    [theme.breakpoints.down('xs')]: {
       marginTop: 100
     }
   },
@@ -32,7 +33,7 @@ const useStyles = makeStyles(theme => ({
   },
   feedbackText: {
     marginLeft: 200,
-    [theme.breakpoints.down('xs')]:{
+    [theme.breakpoints.down('xs')]: {
       marginLeft: 0
     }
   },
@@ -51,13 +52,29 @@ const useStyles = makeStyles(theme => ({
     float: 'left',
     height: 45,
     fontSize: 18,
-    [theme.breakpoints.down('xs')]:{
+    [theme.breakpoints.down('xs')]: {
       width: '100%',
     }
   }
 }));
 export const Feedback = () => {
   const classes = useStyles();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Prevents default refresh by the browser
+    emailjs.send('service_nekujb7', 'template_9llrdgj', {
+      name: name,
+      email: email,
+      message: message,
+    }, 'user_C1TJONTMJIrUJ7pSreQs7').then(res => {
+      setEmail('');
+      setName('');
+      setMessage('');
+    });
+  };
 
   return (
     <div className={classes.section} id="feedback">
@@ -75,19 +92,30 @@ export const Feedback = () => {
                 </Typography>
                 <Grid container spacing={1}>
                   <Grid item lg={6} xs={12}>
-                    <TextField variant="outlined" margin="dense" label="Name" fullWidth/>
+                    <TextField variant="outlined" margin="dense" label="Name" fullWidth
+                               onChange={(e) => setName(e?.target?.value)}/>
                   </Grid>
                   <Grid item lg={6} xs={12}>
-                    <TextField variant="outlined" margin="dense" type="email" label="Email" fullWidth/>
+                    <TextField variant="outlined" margin="dense" type="email" label="Email" fullWidth
+                               onChange={(e) => setEmail(e?.target?.value)}/>
                   </Grid>
                   <Grid item lg={12} xs={12}>
                     <TextareaAutosize aria-label="minimum height" minRows={5}
+                                      color="primary"
+                                      onChange={(e) => setMessage(e?.target?.value)}
                                       placeholder="Describe your experience here..."
-                                      style={{borderRadius: 5, width: '100%', padding: 20, backgroundColor: '#f4f4f4'}}
+                                      style={{
+                                        borderRadius: 5,
+                                        border: 'none',
+                                        width: '100%',
+                                        padding: 20,
+                                        backgroundColor: '#eae9e9'
+                                      }}
                     />
                   </Grid>
                   <Grid item lg={12} xs={12}>
-                    <Button variant="contained" color="secondary" className={classes.button}>Send</Button>
+                    <Button onClick={(e) => handleSubmit(e)} variant="contained" color="secondary"
+                            className={classes.button}>Send</Button>
                   </Grid>
                 </Grid>
               </div>
