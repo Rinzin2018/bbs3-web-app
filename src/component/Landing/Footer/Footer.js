@@ -1,6 +1,4 @@
 import React from 'react';
-import {makeStyles} from '@material-ui/core/styles';
-import BackgroundImage from '../../../images/footer.png';
 import {Grid, Hidden, Typography} from '@material-ui/core';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
@@ -9,175 +7,7 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';
 import EmailIcon from '@material-ui/icons/Email';
 import CallIcon from '@material-ui/icons/Call';
 import GoogleMapsContainer from './Map';
-
-
-const useStyles = makeStyles(theme => ({
-  section: {
-    backgroundImage: `url(${BackgroundImage})`,
-    width: '100%',
-    marginTop: 150,
-    paddingTop: 200,
-  },
-
-  logo: {
-    height: 80,
-    marginLeft: 45,
-  },
-
-  head: {
-    color: '#fff',
-    fontWeight: 700,
-    marginLeft: 50,
-  },
-
-  content: {
-    color: '#fff',
-    marginTop: 30,
-    marginLeft: 150,
-    marginBottom: 70
-  },
-
-  link: {
-    marginLeft: 12,
-    textDecoration: 'none',
-  },
-
-  follow: {
-    color: '#fff',
-    fontWeight: 700,
-    marginTop: 80,
-    marginLeft: 150,
-  },
-
-  icon: {
-    display: 'flex',
-    marginTop: 30,
-    marginLeft: 145
-  },
-
-  facebookIcon: {
-    backgroundColor: '#fff',
-    height: 45,
-    width: 45,
-    borderRadius: 50,
-    padding: '5px 5px 5px 5px',
-    marginRight: 20,
-    color: '#4267B2',
-  },
-
-  instagramIcon: {
-    backgroundColor: '#fff',
-    height: 45,
-    width: 45,
-    borderRadius: 50,
-    padding: '5px 5px 5px 5px',
-    marginRight: 20,
-    color: ' #cd486b',
-  },
-
-  linkedInIcon: {
-    backgroundColor: '#fff',
-    height: 45,
-    width: 45,
-    borderRadius: 50,
-    padding: '5px 5px 5px 5px',
-    marginRight: 20,
-    color: '#0077b5',
-  },
-
-  contact: {
-    color: '#fff',
-    fontWeight: 700,
-    marginTop: 80,
-    marginLeft: 150,
-  },
-
-// Mobile View
-
-  section1: {
-    backgroundColor: '#FEA000',
-    padding: '5px 5px',
-    marginTop: 30,
-    width: '100%',
-  },
-
-  logoMobile: {
-    height: 50,
-    width: 50,
-    marginLeft: 20,
-    marginTop: 6
-  },
-
-  headMobile: {
-    color: '#fff',
-    fontWeight: 700,
-    marginLeft: 20,
-    fontSize: 16
-  },
-
-  contentMobile: {
-    color: '#fff',
-    marginLeft: 20,
-    fontSize:15
-  },
-
-  linkMobile: {
-    textDecoration: 'none',
-  },
-
-  followMobile: {
-    color: '#fff',
-    fontWeight: 700,
-    marginLeft: 20,
-    marginTop: 20,
-    fontSize: 16
-  },
-
-  contactMobile: {
-    color: '#fff',
-    fontWeight: 700,
-    marginTop: 57,
-    marginLeft: 6,
-    marginBottom: 4,
-    fontSize: 16
-  },
-
-  iconMobile: {
-    display: 'flex',
-    marginBottom: 6,
-  },
-
-  facebookIconMobile: {
-    backgroundColor: '#fff',
-    height: 35,
-    width: 35,
-    borderRadius: 40,
-    padding: '3px 3px 3px 3px',
-    marginRight: 10,
-    marginLeft: 20,
-    color: '#4267B2',
-  },
-
-  instagramIconMobile: {
-    backgroundColor: '#fff',
-    height: 35,
-    width: 35,
-    borderRadius: 40,
-    padding: '3px 3px 3px 3px',
-    color: '#4267B2',
-  },
-
-  linkedInIconMobile: {
-    backgroundColor: '#fff',
-    height: 35,
-    width: 35,
-    borderRadius: 40,
-    padding: '3px 3px 3px 3px',
-    marginLeft: 10,
-    color: '#4267B2',
-  }
-
-}));
+import {useStyles} from './styles';
 
 export const Footer = () => {
   const classes = useStyles();
@@ -198,7 +28,6 @@ export const Footer = () => {
                   <a href="#" className={classes.link}> Read More.. </a> </Typography>
               </div>
             </Grid>
-
             <Grid item lg={3} md={3}>
               <div>
                 <Typography variant={'h6'} className={classes.follow}> Follow us </Typography>
@@ -209,7 +38,6 @@ export const Footer = () => {
                 <LinkedInIcon className={classes.linkedInIcon}/>
               </div>
             </Grid>
-
             <Grid item lg={3} md={3}>
               <div>
                 <Typography variant={'h6'} className={classes.contact}> Contact us </Typography>
@@ -226,11 +54,8 @@ export const Footer = () => {
                 </div>
               </div>
             </Grid>
-
             <Grid item lg={3} md={3}>
-              <div>
-                Google Map
-              </div>
+              <GoogleMapsContainer/>
             </Grid>
           </Grid>
         </div>
@@ -249,7 +74,6 @@ export const Footer = () => {
                   voluptatem
                   <a href="#" className={classes.linkMobile}> Read More.. </a> </Typography>
               </div>
-
               <div>
                 <Typography variant={'h6'} className={classes.followMobile}> Follow us </Typography>
               </div>
@@ -259,7 +83,6 @@ export const Footer = () => {
                 <LinkedInIcon className={classes.linkedInIconMobile}/>
               </div>
             </Grid>
-
             <Grid item sm={5} xs={5}>
               <div>
                 <Typography variant={'h6'} className={classes.contactMobile}> Contact us </Typography>
@@ -274,6 +97,9 @@ export const Footer = () => {
                 <div className={classes.iconMobile}>
                   <CallIcon/> <Typography style={{fontSize: 14}}> 12456789 </Typography>
                 </div>
+              </div>
+              <div>
+                <GoogleMapsContainer/>
               </div>
             </Grid>
           </Grid>
