@@ -6,7 +6,7 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import EmailIcon from '@material-ui/icons/Email';
 import CallIcon from '@material-ui/icons/Call';
-import GoogleMapsContainer from './Map';
+import {GoogleMapsContainer} from './Map';
 import {useStyles} from './styles';
 
 export const Footer = () => {

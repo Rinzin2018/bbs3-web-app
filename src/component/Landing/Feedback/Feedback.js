@@ -1,5 +1,16 @@
 import React, {useState} from 'react';
-import {Button, Card, Container, Grid, Hidden, Paper, TextareaAutosize, TextField, Typography} from '@material-ui/core';
+import {
+  Button,
+  Card,
+  CircularProgress,
+  Container,
+  Grid,
+  Hidden,
+  Paper,
+  TextareaAutosize,
+  TextField,
+  Typography
+} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import PinDropIcon from '@material-ui/icons/PinDrop';
 import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
@@ -62,6 +73,7 @@ export const Feedback = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevents default refresh by the browser
@@ -114,8 +126,14 @@ export const Feedback = () => {
                     />
                   </Grid>
                   <Grid item lg={12} xs={12}>
-                    <Button onClick={(e) => handleSubmit(e)} variant="contained" color="secondary"
-                            className={classes.button}>Send</Button>
+                    <Button onClick={(e) => {
+                      setLoading(true);
+                      setTimeout(function () {
+                        setLoading(false);
+                      }, 3000);
+                      handleSubmit(e);
+                    }} variant="contained" color="secondary" className={classes.button}>{loading &&
+                    <CircularProgress color="secondary"/>}Send</Button>
                   </Grid>
                 </Grid>
               </div>

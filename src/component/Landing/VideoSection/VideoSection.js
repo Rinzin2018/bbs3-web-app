@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactPlayer from 'react-player/lazy';
+import ReactPlayer from 'react-player';
 import {Container, Grid, Hidden} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 
@@ -21,7 +21,7 @@ export const VideoSection = () => {
         <Grid container spacing={2}>
           <Hidden smDown={true}>
             <Grid item lg={9} md={9}>
-              <ReactPlayer url="http://edu.dcpl.bt/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBY3M9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--78345a83f42a0c3d64927df6288651a1fc2999db/States%20of%20matter%20for%20kids%20-%20What%20are%20the%20states%20of%20matter%20Solid,%20liquid%20and%20gas.mp4"
+              <ReactPlayer url="https://www.youtube.com/watch?v=Gkhs-HHc3jk"
                            controls={true}
                            volume={9}
                            muted={true}

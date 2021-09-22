@@ -86,7 +86,7 @@ export const useStyles = makeStyles(theme => ({
 
   section1: {
     backgroundColor: '#FEA000',
-    padding: '5px 0 180px 0',
+    padding: '5px 0 30px 0',
     marginTop: 30,
     width: '100%',
   },

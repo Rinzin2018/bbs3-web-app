@@ -1,105 +1,20 @@
 import React from 'react';
-import {GoogleApiWrapper, InfoWindow, Map, Marker} from 'google-maps-react';
 import {Hidden} from '@material-ui/core';
 
-class GoogleMapsContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      showingInfoWindow: false,
-      activeMarker: {},
-      selectedPlace: {}
-    };
-    // binding this to event-handler functions
-    this.onMarkerClick = this.onMarkerClick.bind(this);
-    this.onMapClick = this.onMapClick.bind(this);
-  }
+export const GoogleMapsContainer = () => {
 
-  onMarkerClick = (props, marker, e) => {
-    this.setState({
-      selectedPlace: props,
-      activeMarker: marker,
-      showingInfoWindow: true
-    });
-  };
-  onMapClick = (props) => {
-    if (this.state.showingInfoWindow) {
-      this.setState({
-        showingInfoWindow: false,
-        activeMarker: null
-      });
-    }
-  };
-
-  render() {
-    const style = {
-      width: 260,
-      height: 250,
-      marginLeft: 50,
-      marginTop: 80,
-    };
-
-    const mobileStyle = {
-      width: 160,
-      height: 200,
-      marginTop: 10,
-    };
-
-    return (
-      <div>
-        <Hidden smDown={true}>
-          <Map
-            item
-            xs={12}
-            containerStyle={style}
-            google={this.props.google}
-            onClick={this.onMapClick}
-            zoom={14}
-            initialCenter={{lat: 27.4712, lng: 89.6339}}
-          >
-            <Marker
-              onClick={this.onMarkerClick}
-              title={'Changing Colors Garage'}
-              position={{lat: 27.4712, lng: 89.6339}}
-              name={'Changing Colors Garage'}
-            />
-            <InfoWindow
-              marker={this.state.activeMarker}
-              visible={this.state.showingInfoWindow}
-            >
-            </InfoWindow>
-          </Map>
-        </Hidden>
-        <Hidden smUp={true}>
-          <Map
-            item
-            xs={12}
-            containerStyle={mobileStyle}
-            google={this.props.google}
-            onClick={this.onMapClick}
-            zoom={14}
-            initialCenter={{lat: 27.4712, lng: 89.6339}}
-          >
-            <Marker
-              onClick={this.onMarkerClick}
-              title={'Changing Colors Garage'}
-              position={{lat: 27.4712, lng: 89.6339}}
-              name={'Changing Colors Garage'}
-            />
-            <InfoWindow
-              marker={this.state.activeMarker}
-              visible={this.state.showingInfoWindow}
-            >
-            </InfoWindow>
-          </Map>
-        </Hidden>
-      </div>
-    );
-  }
-}
-
-export default GoogleApiWrapper(
-  {
-    api: (process.env.GOOGLE_API_KEY_GOES_HERE)
-  }
-)(GoogleMapsContainer);
+  return (
+    <div>
+      <Hidden smDown={true}>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3539.73803147685!2d89.6314899150294!3d27.477413942166038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e194181428ad2d%3A0xcf8d7c3f7d5e245c!2sKuzoo%20FM!5e0!3m2!1sen!2sbt!4v1632300797743!5m2!1sen!2sbt"
+          width="300" height="250" style={{border: 0, marginTop: 80}} allowFullScreen="" loading="lazy"/>
+      </Hidden>
+      <Hidden smUp={true}>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3539.73803147685!2d89.6314899150294!3d27.477413942166038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e194181428ad2d%3A0xcf8d7c3f7d5e245c!2sKuzoo%20FM!5e0!3m2!1sen!2sbt!4v1632300797743!5m2!1sen!2sbt"
+          width="150" height="150" style={{border: 0, marginTop: 10}} allowFullScreen="" loading="lazy"/>
+      </Hidden>
+    </div>
+  );
+};
