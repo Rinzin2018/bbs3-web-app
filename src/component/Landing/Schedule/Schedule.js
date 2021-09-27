@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Container, Grid, Hidden, Typography} from '@material-ui/core';
+import {Button, Container, Grid, Typography} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
@@ -21,7 +21,13 @@ const useStyles = makeStyles(theme => ({
     width: 100,
     height: 100,
     objectFit: 'contain',
-    marginTop: 40
+    marginTop: 40,
+
+    [theme.breakpoints.up('sm')]: {
+      marginTop: 90,
+      width: 200,
+      height: 200,
+    }
   },
   text: {
     fontSize: 20,
@@ -60,6 +66,27 @@ const useStyles = makeStyles(theme => ({
       fontSize: 12,
       marginTop: 30
     }
+  },
+  smDown: {
+    [theme.breakpoints.down('sm')]: {
+      display: 'none'
+    }
+  },
+  displayMobile: {
+    [theme.breakpoints.down('lg')]: {
+      display: 'none'
+    },
+    [theme.breakpoints.down('md')]: {
+      display: 'none'
+    },
+    [theme.breakpoints.down('sm')]: {
+      display: 'inline',
+      width: 200
+    },
+    [theme.breakpoints.down('xs')]: {
+      display: 'inline'
+    },
+
   }
 }));
 export const Schedule = () => {
@@ -69,21 +96,22 @@ export const Schedule = () => {
     <div className={classes.section} id="schedule">
       <Container>
         <Grid container>
-          <Grid item lg={5} md={5} xs={7}>
+          <Grid item lg={5} md={5} sm={7} xs={7}>
             <Typography className={classes.text}>Don't miss any of our programs. Check our</Typography>
             <Typography className={classes.text2}>schedule updates here</Typography>
             <Button color="secondary" variant="contained" className={classes.button}>Check Schedule</Button>
           </Grid>
-          <Hidden smDown={true}>
-            <Grid item lg={7} md={7}>
+
+          <Grid item lg={7} md={7}>
+            <div className={classes.smDown}>
               <img src={require('../../../images/schedule.png').default} className={classes.scheduleImage} alt=""/>
-            </Grid>
-          </Hidden>
-          <Hidden smUp={true}>
-            <Grid item xs={5} align="center">
+            </div>
+          </Grid>
+          <Grid item sm={5} xs={5} align="center">
+            <div className={classes.displayMobile}>
               <img src={require('../../../images/schedule-mobile.png').default} className={classes.mobileImage} alt=""/>
-            </Grid>
-          </Hidden>
+            </div>
+          </Grid>
         </Grid>
       </Container>
     </div>

@@ -30,6 +30,8 @@ export const useStyles = makeStyles(theme => ({
   link: {
     marginLeft: 12,
     textDecoration: 'none',
+    color: 'blue',
+    cursor: 'pointer'
   },
 
   follow: {
@@ -89,6 +91,10 @@ export const useStyles = makeStyles(theme => ({
     padding: '5px 0 30px 0',
     marginTop: 30,
     width: '100%',
+
+    [theme.breakpoints.up('md')]: {
+      display: 'none'
+    }
   },
 
   logoMobile: {
@@ -113,6 +119,8 @@ export const useStyles = makeStyles(theme => ({
 
   linkMobile: {
     textDecoration: 'none',
+    color: 'blue',
+    cursor: 'pointer'
   },
 
   followMobile: {

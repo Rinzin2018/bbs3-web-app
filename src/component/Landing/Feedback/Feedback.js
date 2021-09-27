@@ -38,12 +38,20 @@ const useStyles = makeStyles(theme => ({
     padding: 50,
     borderRadius: 0,
     boxShadow: '0 5px 10px 0 rgba(0, 0, 0, 0.2)',
+
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+    },
     [theme.breakpoints.down('xs')]: {
       width: '100%',
+      padding: '30px 20px 30px 20px',
     }
   },
   feedbackText: {
     marginLeft: 200,
+    [theme.breakpoints.down('sm')]: {
+      marginLeft: 0
+    },
     [theme.breakpoints.down('xs')]: {
       marginLeft: 0
     }
@@ -77,11 +85,11 @@ export const Feedback = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevents default refresh by the browser
-    emailjs.send('service_nekujb7', 'template_9llrdgj', {
+    emailjs.send(process.env.GATSBY_EMAIL_SERVICE_ID, process.env.GATSBY_EMAIL_TEMPLATE_ID, {
       name: name,
       email: email,
       message: message,
-    }, 'user_C1TJONTMJIrUJ7pSreQs7').then(res => {
+    }, process.env.GATSBY_EMAIL_USER_ID).then(res => {
       setEmail('');
       setName('');
       setMessage('');
@@ -104,15 +112,15 @@ export const Feedback = () => {
                 </Typography>
                 <Grid container spacing={1}>
                   <Grid item lg={6} xs={12}>
-                    <TextField variant="outlined" margin="dense" label="Name" fullWidth
+                    <TextField variant="outlined" margin="dense" label="Name" fullWidth value={name}
                                onChange={(e) => setName(e?.target?.value)}/>
                   </Grid>
                   <Grid item lg={6} xs={12}>
-                    <TextField variant="outlined" margin="dense" type="email" label="Email" fullWidth
+                    <TextField variant="outlined" margin="dense" type="email" label="Email" fullWidth value={email}
                                onChange={(e) => setEmail(e?.target?.value)}/>
                   </Grid>
                   <Grid item lg={12} xs={12}>
-                    <TextareaAutosize aria-label="minimum height" minRows={5}
+                    <TextareaAutosize aria-label="minimum height" minRows={5} value={message}
                                       color="primary"
                                       onChange={(e) => setMessage(e?.target?.value)}
                                       placeholder="Describe your experience here..."
@@ -132,8 +140,9 @@ export const Feedback = () => {
                         setLoading(false);
                       }, 3000);
                       handleSubmit(e);
-                    }} variant="contained" color="secondary" className={classes.button}>{loading &&
-                    <CircularProgress color="secondary"/>}Send</Button>
+                    }} variant="contained" color="secondary" className={classes.button}>
+                      {loading &&
+                      <CircularProgress color="secondary"/>}Send</Button>
                   </Grid>
                 </Grid>
               </div>
@@ -151,7 +160,7 @@ export const Feedback = () => {
               </Grid>
               <Grid item lg={10} xs={10}>
                 <Typography style={{color: 'white', fontWeight: 400}}>
-                  Chubachu, Thimphu
+                  BBS Channel 3, Doeboom Lam, Thimphu, Bhutan.
                 </Typography>
               </Grid>
               <Grid item lg={2} xs={2}>
@@ -159,7 +168,7 @@ export const Feedback = () => {
               </Grid>
               <Grid item lg={10} xs={10}>
                 <Typography style={{color: 'white', fontWeight: 400, marginTop: 30,}}>
-                  tsheringg@gmail.com
+                  info@bbs3.bt
                 </Typography>
               </Grid>
               <Grid item lg={2} xs={2}>
@@ -167,7 +176,7 @@ export const Feedback = () => {
               </Grid>
               <Grid item lg={10} xs={10}>
                 <Typography style={{color: 'white', marginTop: 30, fontWeight: 400}}>
-                  +975-17971633
+                  +9752335264
                 </Typography>
               </Grid>
             </Grid>

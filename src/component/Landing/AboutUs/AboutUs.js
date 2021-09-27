@@ -1,11 +1,11 @@
 import React from 'react';
-import {Card, Container, Grid, Hidden, Typography} from '@material-ui/core';
+import {Container, Grid, Hidden, Typography} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
   section: {
     marginTop: 200,
-    [theme.breakpoints.down('xs')]:{
+    [theme.breakpoints.down('xs')]: {
       marginTop: 100
     }
   },
@@ -14,12 +14,12 @@ const useStyles = makeStyles(theme => ({
     fontWeight: 520,
     color: '#000000',
     marginTop: '2em',
-    marginBottom:'.3em'
+    marginBottom: '.3em'
   },
   aboutText: {
     color: '#414040',
     fontWeight: 300,
-    fontSize:'1rem'
+    fontSize: '1rem'
   },
   aboutImage: {
     width: 500,
@@ -34,12 +34,22 @@ const useStyles = makeStyles(theme => ({
     borderTopRightRadius: 130,
     borderBottomLeftRadius: 130,
     backgroundColor: theme.primary,
-    boxShadow: '10px 16px 5px #FFB900'
+    boxShadow: '10px 16px 5px #FFB900',
+
+    [theme.breakpoints.up('md')]: {
+      display: 'none'
+    },
+    [theme.breakpoints.up('sm')]: {
+      borderTopRightRadius: 150,
+      borderBottomLeftRadius: 150,
+      padding: '5em 5em 5em 5em',
+    }
   },
   mobileText: {
     textAlign: 'center',
     fontSize: 12,
-    fontWeight: 300
+    fontWeight: 300,
+    marginTop: 20
   }
 }));
 
@@ -55,31 +65,32 @@ export const AboutUs = () => {
             </Grid>
             <Grid item lg={5} md={5} xs={12}>
               <Typography className={classes.title} variant={'h5'}>
-                About Us
+                About BBS channel 3:
               </Typography>
               <Typography className={classes.aboutText}>
-                BBS is the first television station in Bhutan. <br/> News, documentaries, and entertainment <br/>
-                programs were originally broadcast for one <br/> hour in the evening (7 p.m. to 8 p.m.),
-                seven <br/> days a
-                week, but expanded to four
-                hours (6 <br/> p.m. to 10 p.m.) in December 2004. Once <br/> limited to the capital city.
+                BBS Channel 3, on air since 13th October 2021, <br/> is the third and newest national television
+                station in Bhutan. <br/>
+                BBS Channel 3 is technically affiliated to the Bhutan Broadcasting Service
+                Corporation Ltd. (BBSCL) and operates as a Royal Project. <br/> We are a non-commercial and
+                not-for-profit channel established
+                to provide programs on educational themes.
               </Typography>
             </Grid>
           </Grid>
         </Hidden>
-      </Container>
-      <Hidden smUp={true}>
         <div className={classes.mobile}>
           <Typography variant={'h5'} align={'center'}>
-            About Us
+            About BBS channel 3:
           </Typography>
           <Typography className={classes.mobileText}>
-            BBS is the first television station in Bhutan.News,documentaries,and entertainment
-            programs were originally broadcast for one hour in the evening (7 p.m. to 8 p.m.),
-            seven days a week
+            BBS Channel 3, on air since 13th October 2021, is the third and newest national television station in
+            Bhutan. BBS Channel 3 is technically affiliated to the Bhutan Broadcasting Service
+            Corporation Ltd. (BBSCL) and operates as a Royal Project. We are a non-commercial and not-for-profit channel
+            established to provide programs on educational themes.
           </Typography>
         </div>
-      </Hidden>
+      </Container>
+
     </div>
 
   );
