@@ -6,7 +6,7 @@ export const Banner = () => {
   const classes = useStyles();
 
   return (
-    <React.Fragment id="banner">
+    <div id="banner">
       <Hidden smUp={true}>
         <img src={require('../../../images/banner-child.jpg').default} className={classes.mobileBanner} alt=""/>
       </Hidden>
@@ -31,6 +31,6 @@ export const Banner = () => {
           </Hidden>
         </Grid>
       </Container>
-    </React.Fragment>
+    </div>
   );
 };

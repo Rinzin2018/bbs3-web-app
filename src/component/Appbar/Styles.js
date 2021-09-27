@@ -2,27 +2,31 @@ import {alpha, makeStyles} from '@material-ui/core';
 
 export const useStyles = makeStyles(theme => ({
   appbar: {
-    backgroundColor: 'transparent',
+    backgroundColor: 'white',
     boxShadow: 'none',
-    height: 170
+    height: 80,
+
+    [theme.breakpoints.down('xs')]: {
+      height: 70
+    }
   },
   logo: {
-    width: 150,
-    height: 115,
+    height: '100%',
     marginLeft: 20,
     cursor: 'pointer',
 
     [theme.breakpoints.down('xs')]: {
-      marginTop: 3,
+      marginTop: 10,
       marginLeft: 0,
-      height: 65,
+      height: 55,
       width: 60
     },
   },
   nav: {
-    marginTop: 45,
+    marginTop: 30,
     fontWeight: 500,
     cursor: 'pointer',
+    fontSize: 16,
 
     '&:hover': {
       color: theme.primary,
@@ -31,11 +35,11 @@ export const useStyles = makeStyles(theme => ({
 
     [theme.breakpoints.down('md')]:{
       fontSize: 16,
-      marginTop: 50,
+      marginTop: 30,
     },
     [theme.breakpoints.down('sm')]:{
       fontSize: 14,
-      marginTop: 50,
+      marginTop: 30,
     }
   },
   /*search: {
@@ -64,7 +68,7 @@ export const useStyles = makeStyles(theme => ({
   },
   search: {
     position: 'relative',
-    marginTop: 45,
+    marginTop: 25,
     borderRadius: theme.shape.borderRadius,
     backgroundColor: alpha(theme.palette.common.white, 0.15),
     '&:hover': {
@@ -98,14 +102,17 @@ export const useStyles = makeStyles(theme => ({
     transition: theme.transitions.create('width'),
     width: '100%',
     color: '#656161',
-    border: '1px solid #c4c4c4',
     borderRadius: 5,
 
     [theme.breakpoints.up('sm')]: {
       width: '20ch',
       '&:focus': {
-        width: '37ch',
+        width: '35ch',
       },
     },
+    "&:hover":{
+      border: '1px solid #FFD25C',
+      borderRadius: 25
+    }
   },
 }));

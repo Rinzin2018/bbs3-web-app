@@ -1,17 +1,22 @@
 import React from 'react';
 import {Button, Container, Grid, Typography} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
+import {PageBreak} from '../../../shared/PageBreak/PageBreak';
 
 const useStyles = makeStyles(theme => ({
   section: {
-    marginTop: 200,
+    marginTop: 150,
+    padding: 100,
+    backgroundColor: '#faf9f8',
     [theme.breakpoints.down('xs')]: {
-      marginTop: 30,
+      marginTop: 100,
+      padding: 20
     }
   },
   scheduleImage: {
-    width: '100%',
-    height: 500,
+    width: '85%',
+    height: 400,
+    marginTop: 50,
     [theme.breakpoints.down('md')]: {
       height: 350,
       width: '90%',
@@ -86,7 +91,16 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('xs')]: {
       display: 'inline'
     },
-
+  },
+  scheduleText: {
+    fontSize: 48,
+    fontWeight: 900,
+    textAlign: 'center',
+    fontFamily: 'merri weather',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: 25,
+      marginTop: 20
+    }
   }
 }));
 export const Schedule = () => {
@@ -94,15 +108,21 @@ export const Schedule = () => {
 
   return (
     <div className={classes.section} id="schedule">
+      <Typography className={classes.scheduleText} variant={'h5'}>
+        Schedule
+      </Typography>
+      <PageBreak/>
       <Container>
         <Grid container>
           <Grid item lg={5} md={5} sm={7} xs={7}>
             <Typography className={classes.text}>Don't miss any of our programs. Check our</Typography>
             <Typography className={classes.text2}>schedule updates here</Typography>
-            <Button color="secondary" variant="contained" className={classes.button}>Check Schedule</Button>
+            <a href="https://facebook.com" target="_blank" rel="noreferrer" style={{textDecoration: 'none'}}>
+              <Button color="secondary" variant="contained" className={classes.button}>Check Schedule</Button>
+            </a>
           </Grid>
 
-          <Grid item lg={7} md={7}>
+          <Grid item lg={7} md={7} align="center">
             <div className={classes.smDown}>
               <img src={require('../../../images/schedule.png').default} className={classes.scheduleImage} alt=""/>
             </div>
