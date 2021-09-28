@@ -174,8 +174,8 @@ export const Appbar = (props) => {
                               handleSearch('about');
                             } else if (search?.[0] === 'F' || search?.[0] === 'f') {
                               handleSearch('feedback');
-                            } else if (search?.[0] === 'S' || search?.[0] === 's') {
-                              handleSearch('schedule');
+                            } else if (search?.[0] === 'C' || search?.[0] === 'c') {
+                              handleSearch('contact');
                             }
                           }
                         }}

@@ -13,7 +13,10 @@ import {makeStyles} from '@material-ui/core/styles';
 import * as emailjs from 'emailjs-com';
 
 const useStyles = makeStyles(theme => ({
-  section: {},
+  section: {
+    backgroundColor: '#faf9f8',
+    paddingBottom: 100
+  },
 
   card: {
     width: '85%',
@@ -43,7 +46,8 @@ const useStyles = makeStyles(theme => ({
     fontWeight: 800,
     fontSize: 18,
     letterSpacing: 0.5,
-    marginBottom: 20
+    marginBottom: 20,
+    fontFamily: 'merri weather',
   },
   button: {
     textTransform: 'capitalize',
@@ -91,18 +95,18 @@ export const Feedback = () => {
                 </Typography>
                 <Grid container spacing={1}>
                   <Grid item lg={6} xs={12}>
-                    <TextField variant="outlined" margin="dense" label="Name" fullWidth value={name}
+                    <TextField variant="outlined" margin="dense" label="Name" fullWidth value={name} required
                                onChange={(e) => setName(e?.target?.value)}/>
                   </Grid>
                   <Grid item lg={6} xs={12}>
                     <TextField variant="outlined" margin="dense" type="email" label="Email" fullWidth value={email}
+                               required
                                onChange={(e) => setEmail(e?.target?.value)}/>
                   </Grid>
                   <Grid item lg={12} xs={12}>
                     <TextareaAutosize aria-label="minimum height" minRows={5} value={message}
-                                      color="primary"
+                                      color="primary" required
                                       onChange={(e) => setMessage(e?.target?.value)}
-                                      placeholder="Describe your experience here..."
                                       style={{
                                         borderRadius: 5,
                                         border: 'none',

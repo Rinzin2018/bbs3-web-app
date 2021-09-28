@@ -6,6 +6,8 @@ import {PageBreak} from '../../../shared/PageBreak/PageBreak';
 const useStyles = makeStyles(theme => ({
   contact: {
     padding: '100px 0 100px 0',
+    backgroundColor: '#faf9f8',
+    marginTop: 100
   },
   contactText: {
     fontSize: 48,

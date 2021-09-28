@@ -12,11 +12,9 @@ export const Footer = () => {
     <div className={classes.section}>
       <Container>
         <Grid container>
-          <Grid item lg={6} md={6} sm={6} xs={6}>
-            <Typography className={classes.copy}>&copy; {new Date().getFullYear()} bbs3</Typography>
-          </Grid>
-          <Grid item lg={6} md={6} sm={6} xs={6} align="right">
+          <Grid item lg={12} md={12} sm={12} xs={12} align="center">
             <div>
+              <Typography className={classes.follow}>Follow us</Typography>
               <a href="https://facebook.com" target="_blank" rel="noreferrer">
                 <FacebookIcon className={classes.facebookIcon}/>
               </a>
@@ -27,6 +25,9 @@ export const Footer = () => {
                 <LinkedInIcon className={classes.linkedInIcon}/>
               </a>
             </div>
+          </Grid>
+          <Grid item lg={12} md={12} sm={12} xs={12} align="center">
+            <Typography className={classes.copy}>&copy; {new Date().getFullYear()} bbs3</Typography>
           </Grid>
         </Grid>
       </Container>

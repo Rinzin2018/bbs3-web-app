@@ -13,6 +13,13 @@ export const useStyles = makeStyles(theme => ({
     }
   },
 
+  follow: {
+    color: 'white',
+    fontWeight: 600,
+    fontFamily: 'merri weather',
+    fontSize: 21
+  },
+
   copy: {
     marginTop: 15,
     color: 'white'

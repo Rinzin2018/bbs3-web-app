@@ -13,6 +13,13 @@ const useStyles = makeStyles(theme => ({
       marginTop: 30
     }
   },
+  container: {
+    padding: '0 100px 0 100px',
+
+    [theme.breakpoints.down('sm')]: {
+      padding: 15
+    }
+  },
   wrapper: {
     position: 'relative',
   }
@@ -23,7 +30,7 @@ export const VideoSection = () => {
 
   return (
     <div className={classes.section}>
-      <Container>
+      <Container className={classes.container}>
         <Grid container spacing={1}>
           <Grid item lg={4} md={4} sm={12} xs={12}>
             <ReactPlayer url={video}
