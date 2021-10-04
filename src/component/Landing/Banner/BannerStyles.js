@@ -17,14 +17,15 @@ export const useStyles = makeStyles(theme => ({
   },
   head: {
     fontWeight: 900,
-    fontSize: 30,
+    fontSize: 48,
     color: theme.primary,
     fontFamily: 'Raleway',
   },
   notes: {
-    marginTop: 30,
+    marginTop: 10,
     fontFamily: 'Raleway',
     color: 'white',
+    fontSize: 21,
     marginRight: 10
   },
 }));
