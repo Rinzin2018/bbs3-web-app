@@ -6,13 +6,14 @@ import {AboutUs} from '../AboutUs/AboutUs';
 import {ContactUs} from '../ContactUs/ContactUs';
 
 export const LandingComponent = () => {
+
   return (
-    <React.Fragment>
+    <div>
       <Banner/>
       <AboutUs/>
       <VideoSection/>
       <ContactUs/>
       <Feedback/>
-    </React.Fragment>
+    </div>
   );
 };

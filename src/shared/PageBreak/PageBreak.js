@@ -3,11 +3,15 @@ import {makeStyles} from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
   pageBreak:{
-    width: 300,
+    width: 200,
     height: '100%',
 
     [theme.breakpoints.down('sm')]: {
       width: 150
+    },
+    "&:hover": {
+      transform: 'scale(0.9)',
+      transition: '.6s'
     }
   }
 }))

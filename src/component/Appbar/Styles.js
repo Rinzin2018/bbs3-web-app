@@ -4,6 +4,7 @@ export const useStyles = makeStyles(theme => ({
   appbar: {
     backgroundColor: 'white',
     boxShadow: 'none',
+    position: 'sticky',
     height: 80,
 
     [theme.breakpoints.down('xs')]: {
@@ -23,10 +24,11 @@ export const useStyles = makeStyles(theme => ({
     },
   },
   nav: {
-    marginTop: 30,
+    marginTop: 25,
     fontWeight: 500,
     cursor: 'pointer',
-    fontSize: 16,
+    fontSize: 18,
+    fontFamily: 'Raleway',
 
     '&:hover': {
       color: theme.primary,
@@ -68,7 +70,7 @@ export const useStyles = makeStyles(theme => ({
   },
   search: {
     position: 'relative',
-    marginTop: 25,
+    marginTop: 20,
     borderRadius: theme.shape.borderRadius,
     backgroundColor: alpha(theme.palette.common.white, 0.15),
     '&:hover': {
@@ -112,7 +114,8 @@ export const useStyles = makeStyles(theme => ({
     },
     "&:hover":{
       border: '1px solid #FFD25C',
-      borderRadius: 25
+      borderRadius: 25,
+      transition: '.6s',
     }
   },
 }));

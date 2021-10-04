@@ -29,12 +29,16 @@ import {Link} from 'react-scroll';
 import {useStyles} from './Styles';
 import PropTypes from 'prop-types';
 import {theme} from '../../Theme';
+import 'react-js-stickynav/dist/index.css';
+import {navigate} from 'gatsby-link';
 
 function HideOnScroll(props) {
   const {children, window} = props;
-  // Note that you normally won't need to set the window ref as useScrollTrigger
-  // will default to window.
-  // This is only being set here because the demo is in an iframe.
+  /**
+   * Note that you normally won't need to set the window ref as useScrollTrigger
+   * will default to window.
+   * This is only being set here because the demo is in an iframe.
+   */
   const trigger = useScrollTrigger({target: window ? window() : undefined});
 
   return (
@@ -52,7 +56,6 @@ HideOnScroll.propTypes = {
    */
   window: PropTypes.func,
 };
-
 
 export const Appbar = (props) => {
   const classes = useStyles();
@@ -126,8 +129,9 @@ export const Appbar = (props) => {
   return (
     <React.Fragment>
       <CssBaseline/>
-      <HideOnScroll {...props}>
-        <AppBar className={classes.appbar}>
+      {/*<HideOnScroll {...props}>*/}
+      <AppBar className={classes.appbar}>
+        <nav>
           <Container>
             <Toolbar>
               <Grid container spacing={1}>
@@ -140,24 +144,26 @@ export const Appbar = (props) => {
                 </Grid>
                 <Hidden xsDown={true}>
                   <Grid item lg={1} md={1} sm={1} xs={1} align="center">
-                    <Link to="banner" spy={true} smooth={true}>
+                    <Link to="banner" spy={true} smooth={true} onClick={() => navigate('/')}>
                       <Typography variant="h6" className={classes.nav}>Home</Typography>
                     </Link>
                   </Grid>
                   <Grid item lg={1} md={1} sm={2} xs={1} align="center">
-                    <Link to="about" spy={true} smooth={true}>
+                    <Link to="about" spy={true} smooth={true} onClick={() => navigate('/')}>
                       <Typography variant="h6" className={classes.nav}>About Us</Typography>
                     </Link>
                   </Grid>
                   <Grid item lg={1} md={1} sm={2} xs={1} align="center">
-                    <Link to="feedback" spy={true} smooth={true}>
+                    <Link to="feedback" spy={true} smooth={true} onClick={() => navigate('/')}>
                       <Typography variant="h6" style={{marginLeft: 30}} className={classes.nav}>Feedback</Typography>
                     </Link>
                   </Grid>
                   <Grid item lg={2} md={2} sm={2} xs={1} align="center">
+                    {/*<div onClick={() => navigate('/contact')}>*/}
                     <Link to="contact" spy={true} smooth={true}>
-                      <Typography variant="h6" className={classes.nav}>Contact us</Typography>
+                      <Typography variant="h6" className={classes.nav}>Contact Us</Typography>
                     </Link>
+                    {/*</div>*/}
                   </Grid>
                 </Hidden>
                 <Grid item lg={1} md={1} sm={2} xs={6} align="right">
@@ -211,7 +217,7 @@ export const Appbar = (props) => {
                 {isOpen &&
                 <Grid item lg={12} xs={12}>
                   <Collapse isOpen={isOpen}>
-                    <Search placeholder="Search..." style={{marginTop: 20}}
+                    <Search placeholder="Search..." style={{marginTop: 10}}
                             onChange={(e) => setSearch(e?.target?.value)}
                             onKeyDown={(e) => {
                               if (e.keyCode === 13) {
@@ -230,9 +236,9 @@ export const Appbar = (props) => {
               </Grid>
             </Toolbar>
           </Container>
-        </AppBar>
-      </HideOnScroll>
-      <Toolbar/>
+        </nav>
+      </AppBar>
+      {/*</HideOnScroll>*/}
     </React.Fragment>
   );
 };

@@ -3,10 +3,9 @@ import {makeStyles} from '@material-ui/core/styles';
 export const useStyles = makeStyles(theme => ({
   section: {
     // backgroundImage: `url(${BackgroundImage})`,
-    backgroundColor: '#3e3e3e',
+    backgroundColor: '#b78f36',
     width: '100%',
     padding: 15,
-    marginTop: 100,
 
     [theme.breakpoints.down('xs')]: {
       marginTop: 50
@@ -16,13 +15,15 @@ export const useStyles = makeStyles(theme => ({
   follow: {
     color: 'white',
     fontWeight: 600,
-    fontFamily: 'merri weather',
+    fontFamily: 'Raleway',
     fontSize: 21
   },
 
   copy: {
     marginTop: 15,
-    color: 'white'
+    color: 'white',
+    fontFamily: 'Raleway',
+    fontWeight: 700
   },
 
   facebookIcon: {
@@ -60,7 +61,6 @@ export const useStyles = makeStyles(theme => ({
     width: 30,
     borderRadius: 50,
     padding: '5px 5px 5px 5px',
-    marginRight: 15,
     color: '#0077b5',
 
     '&:hover': {
