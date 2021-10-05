@@ -128,7 +128,6 @@ export const Appbar = (props) => {
 
   return (
     <React.Fragment>
-      <CssBaseline/>
       {/*<HideOnScroll {...props}>*/}
       <AppBar className={classes.appbar}>
         <nav>
@@ -142,7 +141,7 @@ export const Appbar = (props) => {
                     </a>
                   </div>
                 </Grid>
-                <Hidden xsDown={true}>
+                <Hidden smDown={true}>
                   <Grid item lg={1} md={1} sm={1} xs={1} align="center">
                     <Link to="banner" spy={true} smooth={true} onClick={() => navigate('/')}>
                       <Typography variant="h6" className={classes.nav}>Home</Typography>
@@ -153,21 +152,21 @@ export const Appbar = (props) => {
                       <Typography variant="h6" className={classes.nav}>About Us</Typography>
                     </Link>
                   </Grid>
-                  <Grid item lg={1} md={1} sm={2} xs={1} align="center">
-                    <Link to="feedback" spy={true} smooth={true} onClick={() => navigate('/')}>
-                      <Typography variant="h6" style={{marginLeft: 30}} className={classes.nav}>Feedback</Typography>
+                  <Grid item lg={1} md={1} sm={1} xs={1} align="left">
+                    <Link to="contact" spy={true} smooth={true} onClick={() => navigate('/')}>
+                      <Typography variant="h6" style={{marginLeft: 10}} className={classes.nav}>Contact</Typography>
                     </Link>
                   </Grid>
-                  <Grid item lg={2} md={2} sm={2} xs={1} align="center">
+                  <Grid item lg={2} md={2} sm={2} xs={1} align="left">
                     {/*<div onClick={() => navigate('/contact')}>*/}
-                    <Link to="contact" spy={true} smooth={true}>
-                      <Typography variant="h6" className={classes.nav}>Contact Us</Typography>
+                    <Link to="feedback" spy={true} smooth={true}>
+                      <Typography variant="h6" className={classes.nav}>Write to Us</Typography>
                     </Link>
                     {/*</div>*/}
                   </Grid>
                 </Hidden>
                 <Grid item lg={1} md={1} sm={2} xs={6} align="right">
-                  <Hidden xsDown={true}>
+                  <Hidden smDown={true}>
                     <div className={classes.search}>
                       <div className={classes.searchIcon}>
                         <SearchIcon/>
@@ -200,7 +199,7 @@ export const Appbar = (props) => {
                 </Grid>
                 <Hidden smUp={true}>
                   <Grid item xs={1}/>
-                  <Grid item xs={1} sm={6} align="right">
+                  <Grid item xs={1} align="right">
                     <div>
                       {['left'].map((anchor) => (
                         <React.Fragment key={anchor}>

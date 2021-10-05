@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
   },
   head: {
     fontWeight: 700,
-    fontFamily: 'merri weather',
+    fontFamily: 'Raleway:wght@300',
     fontSize: 48,
     textAlign: 'center',
 
@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
     fontSize: 48,
     fontWeight: 900,
     textAlign: 'center',
-    fontFamily: 'merri weather',
+    fontFamily: 'Raleway:wght@300',
 
     [theme.breakpoints.down('sm')]: {
       fontSize: 25
@@ -45,7 +45,7 @@ const Contact = () => {
   const classes = useStyles();
 
   return (
-    <Layout>
+    <div>
       <div id="contact" className={classes.contact}>
         <div className={classes.contactUs}>
           <Typography className={classes.head}>
@@ -62,7 +62,7 @@ const Contact = () => {
           </Typography>
         </Container>
       </div>
-    </Layout>
+    </div>
   );
 };
 

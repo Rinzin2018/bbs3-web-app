@@ -2,20 +2,20 @@ import React, {useEffect} from 'react';
 import {Container, Grid, Typography} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import {PageBreak} from '../../../shared/PageBreak/PageBreak';
-import Aos from 'aos'
-import 'aos/dist/aos.css'
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 const useStyles = makeStyles(theme => ({
   section: {
     paddingTop: 100,
-    paddingBottom: 150,
-    backgroundColor: '#faf9f8',
+    paddingBottom: 50,
+    // backgroundColor: '#faf9f8',
   },
   title: {
     fontSize: 48,
     fontWeight: 900,
-    color: '#000000',
-    fontFamily: 'Raleway',
+    color: theme.secondary,
+    fontFamily: 'Raleway:wght@300',
     marginBottom: '.2em',
 
     [theme.breakpoints.down('sm')]: {
@@ -25,20 +25,20 @@ const useStyles = makeStyles(theme => ({
   aboutText: {
     color: '#414040',
     fontWeight: 300,
-    fontSize: '1.15rem',
+    fontSize: 18,
     letterSpacing: 0.5,
     lineHeight: 2,
     marginTop: 25,
-    fontFamily: 'Raleway',
+    fontFamily: 'Raleway:wght@300',
 
     [theme.breakpoints.down('sm')]: {
       fontSize: 15,
-      textAlign: 'justify'
     }
   },
 }));
 
 export const AboutUs = () => {
+  const classes = useStyles();
 
   useEffect(() => {
     Aos.init({
@@ -47,10 +47,9 @@ export const AboutUs = () => {
     });
   }, []);
 
-  const classes = useStyles();
   return (
-    <div className={classes.section}>
-      <Container id="about">
+    <div id="about" className={classes.section}>
+      <Container>
         <Grid container>
           <Grid item lg={12} md={12} xs={12} align="center" data-aos="fade-right" data-aos-delay="50">
             <Typography className={classes.title} variant={'h5'}>

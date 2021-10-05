@@ -22,6 +22,8 @@ const useStyles = makeStyles(theme => ({
   section: {
     //backgroundColor: '#faf9f8',
     paddingBottom: 100,
+    paddingTop: 100,
+    backgroundColor: '#f6f3b4',
     marginTop: 100
   },
 
@@ -54,7 +56,7 @@ const useStyles = makeStyles(theme => ({
     fontSize: 18,
     letterSpacing: 0.5,
     marginBottom: 20,
-    fontFamily: 'Raleway',
+    fontFamily: 'Raleway:wght@300',
   },
   button: {
     textTransform: 'capitalize',
@@ -116,7 +118,7 @@ export const Feedback = () => {
                   <Card className={classes.card} data-aos="fade-left" data-aos-delay="200">
                     <div className={classes.feedbackText}>
                       <Typography className={classes.text}>
-                        Write to us
+                        Write to Us
                       </Typography>
                       <Grid container spacing={1}>
                         <Grid item lg={6} xs={12} data-aos="fade-left" data-aos-delay="300">
@@ -149,7 +151,7 @@ export const Feedback = () => {
                           <Button type="submit" disabled={!isValid && isSubmitting} onClick={() => {
 
                           }}
-                                  variant="contained" color="secondary" className={classes.button}>
+                                  variant="contained" color="primary" className={classes.button}>
                             {isValid && isSubmitting &&
                             <CircularProgress color="secondary"/>}Send</Button>
                         </Grid>

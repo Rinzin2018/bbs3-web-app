@@ -14,20 +14,16 @@ export const Footer = () => {
         <Grid container>
           <Grid item lg={12} md={12} sm={12} xs={12} align="center">
             <div>
-              <Typography className={classes.follow}>Follow us</Typography>
               <a href="https://facebook.com" target="_blank" rel="noreferrer">
                 <FacebookIcon className={classes.facebookIcon}/>
               </a>
               <a href="https://instagram.com" target="_blank" rel="noreferrer">
                 <InstagramIcon className={classes.instagramIcon}/>
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer">
-                <LinkedInIcon className={classes.linkedInIcon}/>
-              </a>
             </div>
           </Grid>
           <Grid item lg={12} md={12} sm={12} xs={12} align="center">
-            <Typography className={classes.copy}>&copy; {new Date().getFullYear()} bbs3</Typography>
+            <Typography className={classes.copy}>&copy; {new Date().getFullYear()} BBS CHANNEL 3</Typography>
           </Grid>
         </Grid>
       </Container>

@@ -8,7 +8,7 @@ import {Appbar} from '../../Appbar/Appbar';
 const pageStyles = {
   color: '#232129',
   backgroundColor: '#FFFFFF',
-  fontFamily: 'Raleway',
+  fontFamily: 'Raleway:wght@300',
 };
 
 const Layout = ({children}) => {

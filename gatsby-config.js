@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
+    siteUrl: "https://www.bbs3.dcpl.bt",
     title: "bbs3-web-app",
   },
   plugins: [

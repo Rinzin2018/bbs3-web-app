@@ -6,7 +6,6 @@ import {AboutUs} from '../AboutUs/AboutUs';
 import {ContactUs} from '../ContactUs/ContactUs';
 
 export const LandingComponent = () => {
-
   return (
     <div>
       <Banner/>
