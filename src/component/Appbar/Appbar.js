@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import MenuIcon from '@material-ui/icons/Menu';
 import HomeIcon from '@material-ui/icons/Home';
 import {Collapse} from 'reactstrap';
@@ -108,18 +107,18 @@ export const Appbar = (props) => {
         </Link>
       </List>
       <List>
-        <Link to="feedback" spy={true} smooth={true} onClick={toggleDrawer(anchor, false)}>
+        <Link to="contact" spy={true} smooth={true} onClick={toggleDrawer(anchor, false)}>
           <ListItem button>
-            <ListItemIcon><FeedbackIcon style={{color: theme.primary}}/></ListItemIcon>
-            <ListItemText>Feedback</ListItemText>
+            <ListItemIcon><ContactsIcon style={{color: theme.primary}}/></ListItemIcon>
+            <ListItemText>Contact</ListItemText>
           </ListItem>
         </Link>
       </List>
       <List>
-        <Link to="contact" spy={true} smooth={true} onClick={toggleDrawer(anchor, false)}>
+        <Link to="feedback" spy={true} smooth={true} onClick={toggleDrawer(anchor, false)}>
           <ListItem button>
-            <ListItemIcon><ContactsIcon style={{color: theme.primary}}/></ListItemIcon>
-            <ListItemText>Contact Us</ListItemText>
+            <ListItemIcon><FeedbackIcon style={{color: theme.primary}}/></ListItemIcon>
+            <ListItemText>Write to Us</ListItemText>
           </ListItem>
         </Link>
       </List>
