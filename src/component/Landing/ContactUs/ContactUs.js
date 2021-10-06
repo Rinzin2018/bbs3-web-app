@@ -12,10 +12,7 @@ const useStyles = makeStyles(theme => ({
   contact: {
     // padding: '100px 0 100px 0',
     // backgroundColor: '#faf9f8',
-
-    [theme.breakpoints.down('sm')]: {
-      marginTop: 300,
-    }
+    marginTop: 100,
   },
   contactText: {
     fontSize: 48,

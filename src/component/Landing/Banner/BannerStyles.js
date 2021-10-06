@@ -3,10 +3,24 @@ import BackgroundImage from '../../../images/background.png';
 import BackgroundMobileImage from '../../../images/mobileBackground.png';
 
 export const useStyles = makeStyles(theme => ({
+  largeDevice: {
+    [theme.breakpoints.down('sm')]: {
+      display: 'none'
+    }
+  },
   bannerBackground: {
     backgroundImage: `url(${BackgroundImage})`,
     backgroundRepeat: 'no-repeat',
     height: '92vh',
+
+    [theme.breakpoints.down('md')]: {
+      height: '60vh'
+    }
+  },
+  smallDevice: {
+    [theme.breakpoints.up('md')]: {
+      display: 'none',
+    }
   },
   bannerMobileBackground: {
     backgroundImage: `url(${BackgroundMobileImage})`,
@@ -27,7 +41,7 @@ export const useStyles = makeStyles(theme => ({
   },
   bannerText: {
     paddingRight: 20,
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       paddingRight: 0,
       textAlign: 'center'
     }

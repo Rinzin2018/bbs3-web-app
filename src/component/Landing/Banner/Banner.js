@@ -7,11 +7,11 @@ export const Banner = () => {
 
   return (
     <div>
-      <Hidden smDown={true}>
+      <div className={classes.largeDevice}>
         <div id="banner" className={classes.bannerBackground}>
           <Container>
             <Grid container>
-              <Grid item lg={5} md={5} sm={5} xs={12}>
+              <Grid item lg={5} md={5} sm={12} xs={12}>
                 <img src={require('../../../images/bbs3-logo.png').default} alt="" className={classes.logo}/>
                 <div className={classes.bannerText}>
                   <Typography variant={'h5'} className={classes.head}>Learn Something</Typography>
@@ -20,10 +20,10 @@ export const Banner = () => {
             </Grid>
           </Container>
         </div>
-      </Hidden>
-      <Hidden smUp={true}>
+      </div>
+      <div className={classes.smallDevice}>
         <div id="banner" align="center" className={classes.bannerMobileBackground}>
-          <Container>
+          <Container align="center">
             <Grid container>
               <Grid item lg={5} md={5} sm={5} xs={12}>
                 <img src={require('../../../images/bbs3-logo.png').default} alt="" className={classes.logo}/>
@@ -34,7 +34,7 @@ export const Banner = () => {
             </Grid>
           </Container>
         </div>
-      </Hidden>
+      </div>
     </div>
   );
 };
