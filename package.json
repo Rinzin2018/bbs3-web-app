@@ -1,8 +1,8 @@
 {
-  "name": "bbs3-web-app",
+  "name": "bbs3-webapp",
   "version": "1.0.0",
   "private": true,
-  "description": "bbs3-web-app",
+  "description": "bbs3-webapp",
   "author": "rinzin",
   "keywords": [
     "gatsby"
