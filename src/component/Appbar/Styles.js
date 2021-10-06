@@ -25,7 +25,7 @@ export const useStyles = makeStyles(theme => ({
   },
   nav: {
     marginTop: 25,
-    fontWeight: 500,
+    fontWeight: 600,
     cursor: 'pointer',
     fontSize: 18,
     fontFamily: 'Raleway:wght@300',
