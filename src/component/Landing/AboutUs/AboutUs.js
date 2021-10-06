@@ -57,11 +57,10 @@ export const AboutUs = () => {
             </Typography>
             <PageBreak/>
             <Typography className={classes.aboutText} data-aos="fade-right" data-aos-delay="150">
-              BBS Channel 3, on air since 13th October 2021, is the third and newest national television
-              station in Bhutan. <br/>
-              BBS Channel 3 is technically affiliated to the Bhutan Broadcasting Service Corporation Ltd. <br/>
-              (BBSCL) and operates as a Royal Project. We are a non-commercial and not-for-profit <br/>
-              channel established to provide programs on educational themes.
+              BBS Channel 3 is the third national television channel in Bhutan and is technically
+              affiliated to the <br/>
+              Bhutan Broadcasting Service Corporation. We are a non-commercial and not-for-profit Royal <br/>
+              Project established to provide programs on educational themes.
             </Typography>
           </Grid>
         </Grid>
