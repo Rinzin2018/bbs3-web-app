@@ -12,7 +12,7 @@ export const Banner = () => {
           <Container>
             <Grid container>
               <Grid item lg={5} md={5} sm={12} xs={12}>
-                <img src={require('../../../images/bbs3-logo.png').default} alt="" className={classes.logo}/>
+                <img src={require('../../../images/bbs3-logo.png').default} alt="" style={{marginTop: '50%', width: 250, height: 200,}}/>
                 <div className={classes.bannerText}>
                   <Typography variant={'h5'} className={classes.head}>Learn Something</Typography>
                 </div>
