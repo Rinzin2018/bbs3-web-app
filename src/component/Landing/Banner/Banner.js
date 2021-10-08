@@ -11,8 +11,8 @@ export const Banner = () => {
         <div id="banner" className={classes.bannerBackground}>
           <Container>
             <Grid container>
-              <Grid item lg={5} md={5} sm={12} xs={12}>
-                <img src={require('../../../images/bbs3-logo.png').default} alt="" style={{marginTop: '50%', width: 250, height: 200,}}/>
+              <Grid item lg={12} md={12} sm={12} xs={12} align="right">
+                <img src={require('../../../images/bbs3-logo.png').default} alt="" style={{marginTop: '10%', marginRight: 100, width: 250, height: 200,}}/>
                 <div className={classes.bannerText}>
                   <Typography variant={'h5'} className={classes.head}>Learn Something</Typography>
                 </div>
@@ -25,7 +25,7 @@ export const Banner = () => {
         <div id="banner" align="center" className={classes.bannerMobileBackground}>
           <Container align="center">
             <Grid container>
-              <Grid item lg={5} md={5} sm={5} xs={12}>
+              <Grid item lg={5} md={12} sm={12} xs={12}>
                 <img src={require('../../../images/bbs3-logo.png').default} alt="" className={classes.logo}/>
                 <div className={classes.bannerText}>
                   <Typography variant={'h5'} className={classes.head}>Learn Something</Typography>

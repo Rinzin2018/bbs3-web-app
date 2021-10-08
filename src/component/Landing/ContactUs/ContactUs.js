@@ -1,9 +1,7 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {Container, Typography} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import {PageBreak} from '../../../shared/PageBreak/PageBreak';
-import Aos from 'aos';
-import 'aos/dist/aos.css';
 import EmailIcon from '@material-ui/icons/Email';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import PhoneIcon from '@material-ui/icons/Phone';
@@ -38,19 +36,12 @@ const useStyles = makeStyles(theme => ({
 export const ContactUs = () => {
   const classes = useStyles();
 
-  useEffect(() => {
-    Aos.init({
-      offset: 2,
-      easing: 'ease-in-quad',
-    });
-  }, []);
-
   return (
     <div id="contact" className={classes.contact}>
       <Container>
-        <Typography className={classes.contactText} data-aos="fade-right" data-aos-delay="50">Contact Us</Typography>
-        <PageBreak data-aos="fade-right" data-aos-delay="50"/>
-        <Typography className={classes.text} data-aos="flip-up" data-aos-delay="50">
+        <Typography className={classes.contactText}>Contact Us</Typography>
+        <PageBreak/>
+        <Typography className={classes.text}>
           <PhoneIcon style={{fontSize: 30, color: '#55ac05'}}/>
           <p>+9752335264 <br/><br/></p>
           <LocationOnIcon style={{fontSize: 30, color: '#06bfd4'}}/>

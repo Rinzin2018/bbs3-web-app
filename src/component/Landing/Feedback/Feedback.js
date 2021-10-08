@@ -1,12 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {Button, Card, CircularProgress, Container, Grid, Snackbar, TextField, Typography} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import * as emailjs from 'emailjs-com';
 import {Form, Formik} from 'formik';
 import * as Yup from 'yup';
 import MuiAlert from '@material-ui/lab/Alert';
-import Aos from 'aos';
-import 'aos/dist/aos.css'
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -77,13 +75,6 @@ export const Feedback = () => {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
 
-  useEffect(() => {
-    Aos.init({
-      offset: 2,
-      easing: 'ease-in-quad',
-    });
-  }, []);
-
   const handleClose = () => {
     setOpen(false);
   };
@@ -115,13 +106,13 @@ export const Feedback = () => {
             <Form>
               <Grid container>
                 <Grid item lg={12} md={12} sm={12} xs={12} align="center">
-                  <Card className={classes.card} data-aos="fade-left" data-aos-delay="200">
+                  <Card className={classes.card}>
                     <div className={classes.feedbackText}>
                       <Typography className={classes.text}>
                         Write to Us
                       </Typography>
                       <Grid container spacing={1}>
-                        <Grid item lg={6} xs={12} data-aos="fade-left" data-aos-delay="300">
+                        <Grid item lg={6} xs={12}>
                           <TextField variant="outlined" margin="dense" label="Name" fullWidth required name="name"
                                      value={values?.name}
                                      helperText={touched['name'] && errors['name']}
@@ -129,7 +120,7 @@ export const Feedback = () => {
                                      onChange={handleChange}
                                      onBlur={handleBlur}/>
                         </Grid>
-                        <Grid item lg={6} xs={12} data-aos="fade-right" data-aos-delay="400">
+                        <Grid item lg={6} xs={12}>
                           <TextField variant="outlined" margin="dense" type="email" label="Email" fullWidth
                                      required value={values?.email}
                                      name="email"
@@ -138,7 +129,7 @@ export const Feedback = () => {
                                      onChange={handleChange}
                                      onBlur={handleBlur}/>
                         </Grid>
-                        <Grid item lg={12} xs={12} data-aos="fade-left" data-aos-delay="500">
+                        <Grid item lg={12} xs={12}>
                           <TextField variant="outlined" label="Message" fullWidth
                                      required multiline minRows={4}
                                      name="message" value={values?.message}
@@ -147,7 +138,7 @@ export const Feedback = () => {
                                      onChange={handleChange}
                                      onBlur={handleBlur}/>
                         </Grid>
-                        <Grid item lg={12} xs={12} data-aos="flip-up" data-aos-delay="300">
+                        <Grid item lg={12} xs={12}>
                           <Button type="submit" disabled={!isValid && isSubmitting} onClick={() => {
 
                           }}

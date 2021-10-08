@@ -1,9 +1,7 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {Container, Grid, Typography} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import {PageBreak} from '../../../shared/PageBreak/PageBreak';
-import Aos from 'aos';
-import 'aos/dist/aos.css';
 
 const useStyles = makeStyles(theme => ({
   section: {
@@ -40,23 +38,16 @@ const useStyles = makeStyles(theme => ({
 export const AboutUs = () => {
   const classes = useStyles();
 
-  useEffect(() => {
-    Aos.init({
-      offset: 2,
-      easing: 'ease-in-quad',
-    });
-  }, []);
-
   return (
     <div id="about" className={classes.section}>
       <Container>
         <Grid container>
-          <Grid item lg={12} md={12} xs={12} align="center" data-aos="fade-right" data-aos-delay="50">
+          <Grid item lg={12} md={12} xs={12} align="center">
             <Typography className={classes.title} variant={'h5'}>
               About Us
             </Typography>
             <PageBreak/>
-            <Typography className={classes.aboutText} data-aos="fade-right" data-aos-delay="150">
+            <Typography className={classes.aboutText}>
               BBS Channel 3 is the third national television channel in Bhutan and is technically
               affiliated to the <br/>
               Bhutan Broadcasting Service Corporation. We are a non-commercial and not-for-profit Royal <br/>

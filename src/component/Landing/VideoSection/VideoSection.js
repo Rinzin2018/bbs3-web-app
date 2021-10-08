@@ -1,13 +1,10 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import ReactPlayer from 'react-player/lazy';
 import {Container, Grid} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import video from '../../../images/hello.mp4';
 import video1 from '../../../images/hello1.mp4';
 import video2 from '../../../images/hello2.mp4';
-import Aos from 'aos';
-import 'aos/dist/aos.css';
-import BackgroundWebImage from '../../../images/videoImageWeb.png';
 import BackgroundMobileImage from '../../../images/mobileWebImage.png';
 
 const useStyles = makeStyles(theme => ({
@@ -55,20 +52,13 @@ const useStyles = makeStyles(theme => ({
 export const VideoSection = () => {
   const classes = useStyles();
 
-  useEffect(() => {
-    Aos.init({
-      offset: 2,
-      easing: 'ease-in-quad',
-    });
-  }, []);
-
   return (
     <div>
       <div className={classes.smallDevice}>
         <div className={classes.mobileSection}>
           <Container className={classes.container}>
             <Grid container spacing={1}>
-              <Grid item lg={4} md={4} sm={12} xs={12} data-aos="fade-left" data-aos-delay="100">
+              <Grid item lg={4} md={4} sm={12} xs={12}>
                 <ReactPlayer url={video}
                              controls={true}
                              volume={9}
@@ -78,7 +68,7 @@ export const VideoSection = () => {
                              playing={false}
                 />
               </Grid>
-              <Grid item lg={4} md={4} sm={12} xs={12} data-aos="fade-left" data-aos-delay="200">
+              <Grid item lg={4} md={4} sm={12} xs={12}>
                 <ReactPlayer url={video1}
                              controls={true}
                              volume={9}
@@ -88,7 +78,7 @@ export const VideoSection = () => {
                              height={'100%'}
                 />
               </Grid>
-              <Grid item lg={4} md={4} sm={12} xs={12} data-aos="fade-left" data-aos-delay="300">
+              <Grid item lg={4} md={4} sm={12} xs={12}>
                 <ReactPlayer url={video2}
                              controls={true}
                              volume={9}
@@ -105,7 +95,7 @@ export const VideoSection = () => {
       <div className={classes.largeDevice}>
         <Container className={classes.container}>
           <Grid container spacing={3}>
-            <Grid item lg={4} md={4} sm={12} xs={12} data-aos="fade-left" data-aos-delay="100">
+            <Grid item lg={4} md={4} sm={12} xs={12}>
               <ReactPlayer url={video}
                            controls={true}
                            volume={9}
@@ -115,7 +105,7 @@ export const VideoSection = () => {
                            playing={false}
               />
             </Grid>
-            <Grid item lg={4} md={4} sm={12} xs={12} data-aos="fade-left" data-aos-delay="200">
+            <Grid item lg={4} md={4} sm={12} xs={12}>
               <ReactPlayer url={video1}
                            controls={true}
                            volume={9}
@@ -125,7 +115,7 @@ export const VideoSection = () => {
                            height={'100%'}
               />
             </Grid>
-            <Grid item lg={4} md={4} sm={12} xs={12} data-aos="fade-left" data-aos-delay="300">
+            <Grid item lg={4} md={4} sm={12} xs={12}>
               <ReactPlayer url={video2}
                            controls={true}
                            volume={9}
