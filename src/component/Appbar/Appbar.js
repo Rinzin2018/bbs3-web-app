@@ -164,7 +164,7 @@ export const Appbar = (props) => {
                     {/*</div>*/}
                   </Grid>
                 </Hidden>
-                <Grid item lg={1} md={1} sm={2} xs={6} align="right">
+                <Grid item lg={1} md={1} sm={7} xs={6} align="right">
                   <Hidden smDown={true}>
                     <div className={classes.search}>
                       <div className={classes.searchIcon}>
@@ -192,11 +192,11 @@ export const Appbar = (props) => {
                       />
                     </div>
                   </Hidden>
-                  <Hidden smUp={true}>
+                  <Hidden mdUp={true}>
                     <SearchIcon className={classes.searchMobile} onClick={toggle}/>
                   </Hidden>
                 </Grid>
-                <Hidden smUp={true}>
+                <Hidden mdUp={true}>
                   <Grid item xs={1}/>
                   <Grid item xs={1} align="right">
                     <div>
